@@ -1,10 +1,10 @@
 import * as EPUBcfi from '@evidentpoint/readium-cfi-js';
 
-import { Publication } from '../streamer/publication';
+import { Publication } from '../streamer';
 import { Location } from '../navigator/location';
 import { Rendition } from '../navigator/rendition';
 import { Navigator } from '../navigator/navigator';
-import { Link } from '@readium/shared-models/lib/models/publication/link';
+import { Link } from '@flowpub/manifest-processor/src/link';
 import { RenditionContext, SpineItemView } from '../navigator';
 
 class LinkLocationInfo {
@@ -59,7 +59,7 @@ export class PageTitleTocResolver {
     this.ensureSpineItemPageListMap(href);
 
     const link = this.findMatchLink(loc, this.pageListMap);
-    return link ? link.title : '';
+    return link && link.title ? link.title! : '';
   }
 
   public getTocLinkFromLocation(loc: Location): Link | null {
@@ -384,8 +384,10 @@ export class PageTitleTocResolver {
     }
 
     const tocInfo: LinkLocationInfo[] = [];
-    for (const link of this.pub.toc) {
-      this.processTocLink(link, href, tocInfo);
+    if(this.pub.toc){
+      for (const link of this.pub.toc) {
+        this.processTocLink(link, href, tocInfo);
+      }
     }
 
     this.tocMap.set(href, tocInfo);

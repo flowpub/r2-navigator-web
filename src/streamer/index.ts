@@ -1,1 +1,1 @@
-export { Publication } from './publication';
+export { Publication } from '@flowpub/manifest-processor';

@@ -1,4 +1,4 @@
-import { Link } from '@readium/shared-models/lib/models/publication/link';
+import { Link } from '@flowpub/manifest-processor/src/link';
 // tslint:disable-next-line: import-name
 import ResizeSensor from 'resize-sensor';
 import { IContentLoader } from '../../content-loader';

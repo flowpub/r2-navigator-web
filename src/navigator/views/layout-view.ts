@@ -6,7 +6,7 @@ import { SpineItemViewFactory } from './spine-item-view-factory';
 import { CancellationToken, ISettingEntry, ZoomOptions } from './types';
 import { View } from './view';
 import { ViewSettings } from './view-settings';
-import { PageProperty } from '@readium/shared-models/lib/models/publication/interfaces/properties-core';
+import { Page as PageProperty } from '@flowpub/manifest-processor/src/properties';
 
 export class PaginationInfo {
   public spineItemIndex: number;
@@ -67,8 +67,8 @@ export class LayoutView extends View {
     this.vs = vs;
     this.initSpineItemViews();
 
-    if (this.publication.metadata.rendition) {
-      this.isFixedLayout = this.publication.metadata.rendition.layout === 'fixed';
+    if (this.publication.metadata.presentation) {
+      this.isFixedLayout = this.publication.metadata.presentation.layout === 'fixed';
     }
 
     if (this.publication.metadata.readingProgression) {

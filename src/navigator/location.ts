@@ -1,13 +1,13 @@
 export class Location {
   private cfi: string;
-  private type: string;
+  private type?: string;
   private href: string;
   private fragments: string[];
   private isPrecise: boolean;
 
   constructor(
     cfi: string,
-    type: string,
+    type: string | undefined,
     href: string,
     fragments: string[],
     isPrecise: boolean = true,
@@ -23,7 +23,7 @@ export class Location {
     return this.fragments;
   }
 
-  public getMediaType(): string {
+  public getMediaType(): string | undefined {
     return this.type;
   }
 

@@ -1,4 +1,4 @@
-import { Link } from '@readium/shared-models/lib/models/publication/link';
+import { Link } from '@flowpub/manifest-processor/src/link';
 import { IContentView, SelfResizeCallback } from './content-view/content-view';
 import { IContentViewFactory } from './content-view/content-view-factory';
 import { ViewSettings } from './view-settings';

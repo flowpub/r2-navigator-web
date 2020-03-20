@@ -79,10 +79,11 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
+    "@evidentpoint/readium-cfi-js": "^1.2.1",
+    "@flowpub/manifest-processor": "^2.3.3",
+    "@readium/glue-modules": "1.3.2",
     "@readium/shared-models": "^1.0.0-alpha.2",
     "isomorphic-url-shim": "^1.0.2",
-    "@evidentpoint/readium-cfi-js": "^1.2.1",
-    "@readium/glue-modules": "1.3.2",
     "resize-sensor": "^0.0.6"
   }
 }

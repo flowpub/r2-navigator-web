@@ -45,7 +45,8 @@ export class HostEnv {
 
   public async openPublicationR2(pubUrl: string): Promise<void> {
     this.pubUrl = pubUrl;
-    this.publication = await Publication.fromURL(`${window.location.origin}${this.pubUrl}`);
+    const selfUrl = `${window.location.origin}${this.pubUrl}`
+    this.publication = await Publication.ParseFromURL(selfUrl, selfUrl);
 
     const loader = new IFrameLoader(this.publication.getBaseURI());
     loader.setReadiumCssBasePath('/fixtures/readium-css');
