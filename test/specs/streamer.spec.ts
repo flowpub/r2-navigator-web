@@ -7,7 +7,7 @@ describe('StreamerClient', () => {
     it('should open publication from url', async () => {
       const pub = await Publication.ParseFromURL('/fixtures/publications/metamorphosis/manifest.json');
       // tslint:disable-next-line:no-http-string
-      assert.equal(pub['@context']![0], 'http://readium.org/webpub/default.jsonld');
+      assert.equal(pub['@context']!, 'http://readium.org/webpub/default.jsonld');
     });
   });
 });

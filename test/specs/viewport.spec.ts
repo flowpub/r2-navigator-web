@@ -24,9 +24,8 @@ describe('Viewport', () => {
 
     viewport = new Viewport(viewportDiv);
 
-    const publication = await Publication.fromURL(
-      `${window.location.origin}/fixtures/publications/metamorphosis/manifest.json`,
-    );
+    const url = `${window.location.origin}/fixtures/publications/metamorphosis/manifest.json`;
+    const publication = await Publication.ParseFromURL(url, url);
 
     const loader = new IFrameLoader(publication.getBaseURI());
     loader.setReadiumCssBasePath('/fixtures/readium-css');
